@@ -1,0 +1,41 @@
+# COCO 2017 dataset http://cocodataset.org - first 128 training images
+# Download command:  python -c "from yolov5.utils.google_utils import gdrive_download; gdrive_download('1n_oKgR81BJtqk75b00eAjdv03qVCQn2f','coco128.zip')"
+# Train command: python train.py --data ./data/coco128.yaml
+# Dataset should be placed next to yolov5 folder:
+#   /parent_folder
+#     /coco128
+#     /yolov5
+
+
+# train and val datasets (image directory or *.txt file with image paths)
+train: /yolov5/custom/train.txt
+val: /yolov5/custom/val.txt
+
+# number of classes
+nc: 164
+
+# class names
+names: ["17cha_pet","2% peach_pet","2%_can","aloe_pet","ambasa_can345","bacchus F_pet","baeksansu_pet","black_pet",
+        "blackbori_light_pet","bongbong_can","burdock_tea_pet","cantata americano_can","cantata latte_can","cantata_americano_can200",
+        "cantata_americano_pet","cantata_latte_can390","cantata_peanut_can","cassiatora tea_pet","ceylon tea_can",
+        "cheonyeon_can355",  "cider_can","cider_lowersugar_can","cider_pet","coca_can","coca_pet","cocopalm_can",
+        "colombiana_master_black_pet500","colombiana_master_latte_pet500","condition_lady_pet","condition_pet","conditionCEO_pet",
+        "confidence_pet","contrabass latte_pet","contrabass_pet","daily C_pet","dawn1004_can","dawn808_can","demisoda_can",
+        "demisoda_orange","dr.pepper_can","e-L_pet","empty","fanta orange_pet","fanta pine_pet","flower_tea_pet","fruitcider_kiwi_pet",
+        "fruitcider_pine_pet","G_original_pet","G_sparkling_pet","galbae_can","galbae_pet","gatorade_pet","georgia_craft_latte_pet470",
+        "georgia_latte_can240","georgia_max_can","georgia_original_can","getorade_can","gotica_americano_can","gotica_latte_can",
+        "gotica_vintage_black_can390","gotica_vintage_latte_can390","grape100_pet","green plum_pet","green_smoothie_pet","greentea_pet",
+        "hongsam_pet","hot6_can","hot6_thekingpower_can","hutgaecha_pet","hutgaesoo_EX_pet","hutgaesoo_pet","hwal_pet","icis8.0_pet",
+        "ion the fit_pet","jeju_pet","jinssanghwa_pet","kkaesugang_can","leblen_grapefruit_pet","leblen_peach_pet","lemona_pet",
+        "lemona_sparkling_can","lemonade_pet","let's be mild_can","let's be salt_can","let's be trip_can","let'sbe_cafetime_americano_can",
+        "let'sbe_cafetime_latte_can","let'sbe_grande_latte_pet500","lipton_can","lipton_pet","Lu-10_pet","mango_can","matcha_pet",
+        "mate tea_pet","mccol_can","mccol_pet","miero_fiber","milkis_can","milkis_pet","minutemaid_apple_can","minutemaid_grape_can",
+        "minutemaid_peach_can","mogumogu_peach","mogumogu_pet","monster_can","morning_pet","morningcare_D","morningcare_H",
+        "mtdew_can","omija_pet","oranC_can","oronaminC_pet","ourtea_lemon_pet","ourtea_orange_pet","peach_can","pepsi_can","pepsi_pet",
+        "pocari_can","pocari_pet","power_can","redbull_can","rice_pet","samdasoo_pet","seagram_lemon_pet","sky_pet","smoothieking_original_pet",
+        "smoothieking_pine_pet","softwater_peach_pet","sol_can","sprite_can","sprite_pet","ssaekssaek_can","starbucks_can","starbucks_cream_can",
+        "starbucks_pike_can","tejava_can","tomato_pet","top americano_can","top latte_can","top_americano_can200","top_americano_pet",
+        "top_americano_pet380","top_latte_can","top_latte_pet","top_the_black_can380","toreta_can","toreta_pet","trevi_lemon_pet",
+        "tropicana_apple_can","tropicana_orange_can","tropicana_peach_can","v line_pet","victoria_whitegrape_pet","vilak_pet",
+        "virak_can","vita500_can","vita500_pet","vita500_royal_pet","vitamin_orange_pet","vitamin_red_pet","vtallk_blue_pet",
+        "vtallk_pink_pet","w_cha_pet","welchs_can"]

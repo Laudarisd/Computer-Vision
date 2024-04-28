@@ -1,0 +1,9 @@
+[submodule "1.People_Tracking"]
+	path = 1.People_Tracking
+	url = https://github.com/Laudarisd/Computer-Vision.git
+[submodule "2.Classification"]
+	path = 2.Classification
+	url = https://github.com/Laudarisd/Computer-Vision.git
+[submodule "3.Reinforcement_Learning"]
+	path = 3.Reinforcement_Learning
+	url = https://github.com/Laudarisd/Computer-Vision.git

@@ -1,0 +1,1 @@
+## If person is detected as known, it will be saved here with name

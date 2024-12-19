@@ -11,27 +11,25 @@ os.makedirs(output_folder, exist_ok=True)
 # Read the Excel file
 df = pd.read_excel(excel_file)
 
-# Normalize the `ValveType1` column (strip spaces and convert to lowercase)
+# Normalize columns
 df["ValveType1"] = df["ValveType1"].str.strip().str.lower()
+df[" ValveType2"] = df[" ValveType2"].str.strip()
+
+# List all files in the folder for debugging
+pdf_files = os.listdir(pdf_folder)
+print("Files in PDF folder:", pdf_files)
 
 # Helper function to match and copy files to the appropriate folder
 def copy_file(tag, dest_folder):
-    prefixes = ["FV-", "PV-", "LV-", "XV-", "CV-", "AV-", "MV-", "HV-", "TV-", "PDV-", "SP-", "MOV-"]
-    tag = str(tag).replace(" ", "").upper()
-    match = None
-    for prefix in prefixes:
-        if prefix in tag:
-            match = tag.split(prefix)[-1]
-            break
-    
-    if not match:
-        print(f"No matching prefix found for tag: {tag}")
-        return
-    
-    pdf_name = [f for f in os.listdir(pdf_folder) if match in f]
-    if pdf_name:
+    tag = str(tag).strip().upper()  # Normalize the tag
+    print(f"Processing tag: {tag}")  # Debugging
+
+    # Match the entire tag in the filename
+    matched_files = [f for f in pdf_files if tag in f.upper()]
+    if matched_files:
+        print(f"Found matching files for tag {tag}: {matched_files}")
         os.makedirs(dest_folder, exist_ok=True)
-        shutil.copy(os.path.join(pdf_folder, pdf_name[0]), os.path.join(dest_folder, pdf_name[0]))
+        shutil.copy(os.path.join(pdf_folder, matched_files[0]), os.path.join(dest_folder, matched_files[0]))
     else:
         print(f"No matching PDF found for tag: {tag}")
 
@@ -46,9 +44,8 @@ valve_type_1_folder = os.path.join(output_folder, "valve_type_1")
 valve_type_1_mapping = {
     "control valve": "control_valve",
     "on-off valve": "on_off_valve",
-    "mov": "mov_valve"  # Added mapping for "MOV"
+    "mov": "mov_valve"  # Added missing mapping
 }
-
 for _, row in df.iterrows():
     valve_type = row["ValveType1"]
     if valve_type in valve_type_1_mapping:

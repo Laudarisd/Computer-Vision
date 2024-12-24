@@ -47,7 +47,7 @@ CNNs compare images piece by piece. The piece that it looks for are called featu
 <table border="0">
    <tr>
       <td>
-      <img src="./Computer-Vision/tree/main/Project-1.Study_%26_Research/ML/img/features.png" width="100%" />
+      <img src="./Computer-Vision/Project-1.Study_%26_Research/ML/img/features.png" width="100%" />
       </td>
    </tr>
    </table>

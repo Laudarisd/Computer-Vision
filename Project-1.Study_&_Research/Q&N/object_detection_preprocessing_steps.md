@@ -56,10 +56,3 @@ Given an image of size `800x600` resized to `416x416`, bounding box `(200, 150, 
 - `y_min' = (150/600) * 416 = 104, y_max' = (300/600) * 416 = 208`
 - Resized bounding box: `(104, 104, 208, 208)`.
 """
-
-# Save the content to a README.md file
-readme_path = '/mnt/data/README.md'
-with open(readme_path, 'w') as readme_file:
-    readme_file.write(readme_content)
-
-readme_path
